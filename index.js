@@ -43,7 +43,7 @@ function summation(num) {
   return sum;
 }
 
-//console.log("- Summation Task: ", summation(4));
+console.log("- Summation Task: ", summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -127,7 +127,7 @@ function animalNames(array) {
   return displayNames; 
 }
 
-//console.log("animalNames", animalNames(zooAnimals));
+console.log("animalNames", animalNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -140,7 +140,7 @@ function lowerCaseNames(array) {
   return lowercase;   
 }
 
-//console.log("lowerCaseNames: ", lowerCaseNames(zooAnimals));
+console.log("lowerCaseNames: ", lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -154,7 +154,7 @@ function lowPopulationAnimals(array) {
   return lowPop;
 }
 
-//console.log("- lowPopulationAnimals: ", lowPopulationAnimals(zooAnimals));
+console.log("- lowPopulationAnimals: ", lowPopulationAnimals(zooAnimals));
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -187,27 +187,27 @@ function consume(a, b, cb) {
 function add(num1, num2) {
   return num1 + num2;
 }
-// console.log("-CB Step 1: ", add(1,2));
+console.log("-CB Step 1: ", add(1,2));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
 function multiply(num1, num2) {
   return num1 * num2;
 }
-// console.log("-CB Step 2: ", multiply(1,2));
+console.log("-CB Step 2: ", multiply(1,2));
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
 function greeting(first, last) {
   return `Hello ${first} ${last}, nice to meet you!`;
 }
-// console.log("-CB Step 3: ",greeting("Kim","Rodriguez"));
+console.log("-CB Step 3: ",greeting("Kim","Rodriguez"));
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log("add: ", consume(2, 2, add)); // 4
+console.log("multiply: ", consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
@@ -234,24 +234,23 @@ CuboidMaker.prototype.volume = function () {
   2 * (length * width + length * height + width * height)  */
 
 CuboidMaker.prototype.surfaceArea = function () {
-  return (
-    2 *
-    (this.length * this.width +
-      this.length * this.height +
-      this.width * this.height)
-  );
+  return (2 *(this.length * this.width + this.length * this.height + this.width * this.height));
 };
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-const cuboid = new CuboidMaker(4, 5, 5);
+const cuboid = new CuboidMaker({
+  length: 4, 
+  width: 5,
+  height: 5
+});
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-//console.log("- Topic 3, Step 2 :", cuboid.volume()); // 100
-//console.log("- Topic 3, Step 3 :", cuboid.surfaceArea()); // 130
+console.log("Cuboid Volume :", cuboid.volume()); // 100
+console.log("Cuboid Surface Area :", cuboid.surfaceArea()); // 130
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
@@ -281,8 +280,8 @@ const cuboidTwo = new CuboidMakerTwo({
 });
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-//console.log("- Topic 4, Step 1 :", cuboidTwo.volume()); // 100
-//console.log("- Topic 4, Step 2 :", cuboidTwo.surfaceArea()); // 130
+console.log("- Cuboid Two Volume :", cuboidTwo.volume()); // 100
+console.log("- Cuboid Two Surface Area :", cuboidTwo.surfaceArea()); // 130
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo() {
