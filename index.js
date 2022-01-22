@@ -43,7 +43,7 @@ function summation(num) {
   return sum;
 }
 
-console.log("- Summation Task: ", summation(4));
+//console.log("- Summation Task: ", summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -118,15 +118,13 @@ const zooAnimals = [
   */
 
 function animalNames(array) {
-  //receive zooAnimals
-  const displayNames = []; //holds objects of animal names and their scientific names
+  const displayNames = [];
   array.forEach(function (object) {
-    //using forEach, loop thru zooAnimals and push in obj as param
     return displayNames.push(
       `name: ${object.animal_name}, scientific: ${object.scientific_name}`
-    ); //take the obj.keys and push them into the array we created in ``
+    ); 
   });
-  return displayNames; //animalNames returns ^^ that
+  return displayNames; 
 }
 
 //console.log("animalNames", animalNames(zooAnimals));
@@ -138,13 +136,11 @@ function animalNames(array) {
   */
 
 function lowerCaseNames(array) {
-    //  array.map(function(obj) { //use map() to loop thru zooAnimals and accept item as param
-    //    return obj.toLowerCase(); //include the item.name in the returned array except apply .tolowerCase()
-    // });
-     
+  const lowercase = array.map(item => item.animal_name.toLowerCase());
+  return lowercase;   
 }
 
-console.log("lowerCaseNames: ", lowerCaseNames(zooAnimals));
+//console.log("lowerCaseNames: ", lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -167,12 +163,9 @@ function lowPopulationAnimals(array) {
   */
 
 function USApop(array) {
-  array.reduce(function (acc, item) {
-    return acc + item.population;
-  }, 0);
+  const totalPop = array.reduce((acc, item) => acc + item.population, 0);
+ return totalPop;
 }
-
-
 
 console.log("- USApop: ", USApop(zooAnimals));
 
